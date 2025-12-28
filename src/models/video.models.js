@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 
-const VideoSchema = new Schema(
+const VideoSchema = new mongoose.Schema(
     {
          videoFile: {
             type: String, //cloudinary url
@@ -34,7 +34,6 @@ const VideoSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: "User"
         }
-    }, { timestamps: true }
-)
+    }, { timestamps: true })
 
 export const Video = mongoose.model("Video", VideoSchema)
